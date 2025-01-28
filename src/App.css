@@ -45,5 +45,5 @@
 .App{
   min-height: 100vh;
   background: var(--bg-col); /* Fallback color */
-  background: radial-gradient(circle at 50% 160%, rgba(53,126,173,1) 0%, rgba(53,126,173,0) 100%), var(--bg-col);
+  background: radial-gradient(circle at 50% 100%, rgba(53,126,173,0.3) 0%, rgba(53,126,173,0) 100%), var(--bg-col);
 }
