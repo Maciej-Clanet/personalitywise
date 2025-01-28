@@ -63,6 +63,7 @@ export default function AuthPage(){
         setRegisterSuccess("")
 
         // delay 2s to simulate network call delay
+        // I don't have a backend so I'm not using fetch, I promise I can use fetch though.
         setTimeout(() => {
 
             if(!fakeUserDb[username]){
@@ -159,13 +160,14 @@ export default function AuthPage(){
                         }
                     </div>
                     <div className="auth-form-actions">
+                        {registerSuccess ? <div className="auth-success">{registerSuccess}</div> : null}
+                        {error ? <div className="auth-error">{error}</div> : null}
                         <PrimaryButton 
                             text={isLogin ? "Login Now" : "Register Now"} 
                             type="submit" 
                             disabled={isLoading}
                             />
-                        {registerSuccess ? <div className="auth-success">{registerSuccess}</div> : null}
-                        {error ? <div className="auth-error">{error}</div> : null}
+                       
                         <div className="auth-form-toggle">
                             <span>{isLogin ? "Need an account?" : "Already have an account?"}</span>
                             <LinkButton text={isLogin ? "Register Here" : "Log in Here"} onClick={toggleForm}/>
