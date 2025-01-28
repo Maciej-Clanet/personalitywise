@@ -1,6 +1,7 @@
 import "./AuthPage.css"
 import Logo from "../../Assets/Images/Logo.png"
 import { useState } from "react"
+import PrimaryButton from "../../Components/Inputs/PrimaryButton/PrimaryButton"
 
 export function AuthLogo(){
 
@@ -27,8 +28,9 @@ export default function AuthPage(){
                         <input id="username" name="username" type="email" placeholder="example@gmail.com" required/>
 
                         <label for="password">Password:</label>
-                        <input id="password" name="password" type="email" placeholder="example@gmail.com" required/>
+                        <input id="password" name="password" type="password" placeholder="example@gmail.com" required/>
                     </div>
+                    <PrimaryButton text="Login Now" type="submit" />
                 </form>
             </div>
         </div>

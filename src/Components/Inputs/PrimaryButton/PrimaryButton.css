@@ -1,0 +1,15 @@
+.primary-button{
+    background-color: var(--blue-primary);
+    font-size: var(--txt-1);
+    font-weight: 600;
+    color: var(--bg-lightest);
+
+    border: none;
+    border-radius: 32px;
+    padding: 8px 16px;
+
+    cursor: pointer;
+}
+.primary-button:hover{
+    background-color: var(--blue-primary-highlight);
+}
