@@ -9,6 +9,10 @@ const fakeUserDb = {
     "admin@personalitywise.co.uk": {
         "password" : "1234",
         "email" : "admin@personalitywise.co.uk"
+    },
+    "test@gmail.com":{
+        "password" : "1234",
+        "email" : "test@gmail.com",
     }
 }
 

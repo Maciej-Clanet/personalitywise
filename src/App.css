@@ -43,6 +43,35 @@
   font-weight: 800;
 }
 
+/* scrollbars */
+.subtle-scrollbar{
+  /* For Firefox (scrollbar only) */
+
+  --sb-track-color: #e0e7ec;
+  --sb-thumb-color: #357ead;
+  --sb-size: 6px;
+}
+.subtle-scrollbar::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.subtle-scrollbar::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+.subtle-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .subtle-scrollbar {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
 .App{
   min-height: 100vh;
   background: var(--bg-col); /* Fallback color */
