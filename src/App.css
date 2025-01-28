@@ -21,7 +21,8 @@
 /* This will respect users font size settings */
 .typography-default{
   --ratio: 1.25;
-  --txt--1: calc( var(--txt-0) / var(--ratio) / var(--ratio) );
+  --txt--2: calc( var(--txt-0) / var(--ratio) / var(--ratio) );
+  --txt--1: calc( var(--txt-0) / var(--ratio));
   --txt-0: 1rem;
   --txt-1: calc( var(--txt-0) * var(--ratio));
   --txt-2: calc( var(--txt-0) * var(--ratio) * var(--ratio));
