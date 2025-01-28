@@ -48,7 +48,15 @@ export default function AuthPage(){
                         <input id="username" name="username" type="email" placeholder="example@gmail.com" required/>
 
                         <label for="password">Password:</label>
-                        <input id="password" name="password" type="password" placeholder="example@gmail.com" required/>
+                        <input id="password" name="password" type="password" placeholder="Password" required/>
+
+                        {
+                            !isLogin ? <>
+                                 <span for="confirm-password">{/*Empty on purpose to act as spacer for grid*/}</span>
+                                 <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirm Password" required/>
+                            </>
+                            : <div style={{height: "36px"}}></div>
+                        }
                     </div>
                     <div className="auth-form-actions">
                         <PrimaryButton text={isLogin ? "Login Now" : "Register Now"} type="submit" />

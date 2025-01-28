@@ -10,6 +10,17 @@
 
     cursor: pointer;
 }
+
 .primary-button:hover{
     background-color: var(--blue-primary-highlight);
+}
+
+.primary-button:disabled,
+button[disabled]{
+    background-color: gray;
+    cursor:not-allowed;
+
+    &:hover{
+        background-color: lightgray;
+    }
 }

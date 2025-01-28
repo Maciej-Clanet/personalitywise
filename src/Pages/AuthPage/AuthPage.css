@@ -35,8 +35,38 @@
 
     grid-template-columns: max-content 1fr;
     gap: 16px;
+    align-items: center;
 
+    > label{
+        color: var(--blue-dark);
+        font-size: var(--txt-1);
+        font-weight: 700;
+    }
+    > input{
+        border: 1px solid var(--blue-primary);
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-size: var(--txt-0);
+        color: var(--blue-dark);
+
+        &::placeholder{
+            color: var(--blue-primary);
+        }
+    }
 }
+
+@media only screen and (max-width: 450px){
+    .auth-form-fields{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        > input {
+            width: 100%;
+        }
+    }
+}
+
 .auth-form-actions{
     display: flex;
     flex-direction: column;
