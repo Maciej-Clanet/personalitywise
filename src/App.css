@@ -1,0 +1,43 @@
+/* I REALLY don't like default margins, so I remove them everywhere */
+/* I also prefer box-sizing to include borders and padding as part of the size, helps avoid horizontal scrolling issues*/
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* themes */
+.light-theme{
+  --blue-dark: #042D49;
+  --blue-primary: #357EAD;
+  --blue-primary-highlight: #3C8EC3;
+  --bg-col: #F1F4F6;
+  --bg-lightest: #fff;
+
+  --error-col: rgb(255, 67, 61);
+  --success-col: rgb(34, 245, 34);
+}
+
+/* setting up typography scaling based on 1.25 ratio with a base of 1rem (16px) */
+/* This will respect users font size settings */
+.typography-default{
+  --ratio: 1.25;
+  --txt--1: calc( var(--txt-0) / var(--ratio) / var(--ratio) );
+  --txt-0: 1rem;
+  --txt-1: calc( var(--txt-0) * var(--ratio));
+  --txt-2: calc( var(--txt-0) * var(--ratio) * var(--ratio));
+  --txt-3: calc( var(--txt-0) * var(--ratio) * var(--ratio) * var(--ratio));
+}
+
+/* helpers - text */
+.txt--2{ font-size: var(--txt--2); }
+.txt--1{ font-size: var(--txt--1); }
+.txt-0{ font-size: var(--txt-0); }
+.txt-1{ font-size: var(--txt-1); }
+.txt-3{ font-size: var(--txt-2); }
+.txt-4{ font-size: var(--txt-3); }
+.medium{
+  font-weight: 600;
+}
+.bold{
+  font-weight: 800;
+}
