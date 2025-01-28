@@ -13,7 +13,6 @@ const fakeUserDb = {
 }
 
 export function AuthLogo(){
-
     return(
         <div className="auth-logo-container">
             <img src={Logo} alt="Personality Wise Logo"/>
@@ -29,12 +28,16 @@ export default function AuthPage(){
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [registerSuccess, setRegisterSuccess] = useState("");
 
+    //handling auth state is all done inside UserContext
     const {login} = useUser();
 
     const [animateConfirm, setAnimateConfirm] = useState(false);
 
     const [isLogin, setIsLogin] = useState(true);
+
+    // I'm delaying changing back to login form to play the animation before removing the input field
     function toggleForm(){
         if(isLogin){
             setIsLogin(false);
@@ -44,11 +47,10 @@ export default function AuthPage(){
                 setIsLogin(true);
             }, 200);
         }
-        // setIsLogin(!isLogin);
     }
 
+    // using effect to make start animation any time we get back to register page.
     useEffect(() => {
-
         if(!isLogin){
             setAnimateConfirm(true);
         }
@@ -58,6 +60,7 @@ export default function AuthPage(){
 
         setIsLoading(true);
         setError("");
+        setRegisterSuccess("")
 
         // delay 2s to simulate network call delay
         setTimeout(() => {
@@ -83,6 +86,22 @@ export default function AuthPage(){
 
     function handleRegister(){
 
+        setRegisterSuccess("")
+        setIsLoading(true);
+        setError("");
+
+        if(password !== confirmPassword){
+            setError("Passwords need to match");
+            setIsLoading(false);
+            return;
+        }
+
+
+
+        setTimeout(() => {
+            setRegisterSuccess("Account made, check emails!");
+            setIsLoading(false);
+        }, 1000)
     }
 
     function handleSubmit(event){
@@ -102,7 +121,7 @@ export default function AuthPage(){
                 <form className="auth-form" onSubmit={handleSubmit}>
                     <h1 className="txt-4">{isLogin ? "Login" : "Register"}</h1>
                     <div className="auth-form-fields">
-                        <label for="username">Username:</label>
+                        <label htmlFor="username">Username:</label>
                         <input 
                             id="username" 
                             name="username" 
@@ -112,7 +131,7 @@ export default function AuthPage(){
                             onChange={(e) => setUsername(e.target.value)}
                             required/>
 
-                        <label for="password">Password:</label>
+                        <label htmlFor="password">Password:</label>
                         <input 
                             id="password" 
                             name="password" 
@@ -125,7 +144,7 @@ export default function AuthPage(){
 
                         {
                             !isLogin ? <>
-                                 <span for="confirm-password">{/*Empty on purpose to act as spacer for grid*/}</span>
+                                 <span>{/*Empty on purpose to act as spacer for grid*/}</span>
                                  <input 
                                     className={`animated-input ${animateConfirm ? "animate" : null}`}
                                     id="confirm-password" 
@@ -145,6 +164,7 @@ export default function AuthPage(){
                             type="submit" 
                             disabled={isLoading}
                             />
+                        {registerSuccess ? <div className="auth-success">{registerSuccess}</div> : null}
                         {error ? <div className="auth-error">{error}</div> : null}
                         <div className="auth-form-toggle">
                             <span>{isLogin ? "Need an account?" : "Already have an account?"}</span>
