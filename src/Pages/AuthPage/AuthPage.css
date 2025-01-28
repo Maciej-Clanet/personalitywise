@@ -84,3 +84,8 @@
         width: 100%;
     }
 }
+
+.auth-error{
+    text-align: center;
+    color:var(--error-col);
+}
