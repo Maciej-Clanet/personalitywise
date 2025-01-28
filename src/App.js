@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import PageRouting from './Pages/PageRouting/PageRouting';
 
 function App() {
   return (
     <div className="App">
-      stuff
+      test
+      <PageRouting/>
     </div>
   );
 }
