@@ -89,3 +89,13 @@
     text-align: center;
     color:var(--error-col);
 }
+
+.animated-input{
+    transition: opacity 0.2s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.animated-input.animate{
+    opacity: 1;
+    transform: translateY(0)
+}

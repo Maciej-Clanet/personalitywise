@@ -1,6 +1,6 @@
 import "./AuthPage.css"
 import Logo from "../../Assets/Images/Logo.png"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import PrimaryButton from "../../Components/Inputs/PrimaryButton/PrimaryButton"
 import LinkButton from "../../Components/Inputs/LinkButton/LinkButton"
 import { useUser } from "../../Contexts/UserContext"
@@ -32,11 +32,27 @@ export default function AuthPage(){
 
     const {login} = useUser();
 
+    const [animateConfirm, setAnimateConfirm] = useState(false);
 
     const [isLogin, setIsLogin] = useState(true);
     function toggleForm(){
-        setIsLogin(!isLogin);
+        if(isLogin){
+            setIsLogin(false);
+        } else{
+            setAnimateConfirm(false);
+            setTimeout(() => {
+                setIsLogin(true);
+            }, 200);
+        }
+        // setIsLogin(!isLogin);
     }
+
+    useEffect(() => {
+
+        if(!isLogin){
+            setAnimateConfirm(true);
+        }
+    }, [isLogin])
 
     function handleLogin(){
 
@@ -111,6 +127,7 @@ export default function AuthPage(){
                             !isLogin ? <>
                                  <span for="confirm-password">{/*Empty on purpose to act as spacer for grid*/}</span>
                                  <input 
+                                    className={`animated-input ${animateConfirm ? "animate" : null}`}
                                     id="confirm-password" 
                                     name="confirm-password" 
                                     type="password" 
