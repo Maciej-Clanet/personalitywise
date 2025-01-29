@@ -164,6 +164,7 @@ export default function AuthPage(){
                         }
                     </div>
                     <div className="auth-form-actions">
+                        {isLoading ? <div className="auth-loading">Chekcing Credentials...</div> : null}
                         {registerSuccess ? <div className="auth-success">{registerSuccess}</div> : null}
                         {error ? <div className="auth-error">{error}</div> : null}
                         <PrimaryButton 

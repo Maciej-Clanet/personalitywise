@@ -86,7 +86,7 @@
     }
 }
 
-.auth-error, .auth-success{
+.auth-error, .auth-success, .auth-loading{
     text-align: center;
     width: 100%;
     position: absolute;
