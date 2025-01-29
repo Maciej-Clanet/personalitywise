@@ -3,6 +3,10 @@ import { useUser } from "../../Contexts/UserContext";
 
 import MainLayout from "../_Lauouts/MainLayout/MainLayout";
 import AuthPage from "../AuthPage/AuthPage";
+import HomePage from "../HomePage/HomePage";
+import SettingsPage from "../SettingsPage/SettingsPage";
+import SecurityPage from "../SecurityPage/SecurityPage";
+import BillingPage from "../BillingPage/BillingPage";
 
 export default function PageRouting(){
 
@@ -16,10 +20,10 @@ export default function PageRouting(){
 
             {/* protected routes, redirect to auth if not logged in */}
             <Route element={<MainLayout/>}>
-                <Route path="home" element={user ? <div>Home page</div> : <Navigate to="/" />}/>
-                <Route path="settings" element={user ?  <div>Settings page</div> : <Navigate to="/" />}/>
-                <Route path="billing" element={user ? <div>Billing page</div> : <Navigate to="/" />}/>
-                <Route path="security" element={user ? <div>Security page</div> : <Navigate to="/" />}/>
+                <Route path="home" element={user ? <HomePage/> : <Navigate to="/" />}/>
+                <Route path="settings" element={user ?  <SettingsPage/> : <Navigate to="/" />}/>
+                <Route path="billing" element={user ? <BillingPage/> : <Navigate to="/" />}/>
+                <Route path="security" element={user ? <SecurityPage/> : <Navigate to="/" />}/>
             </Route>
         </Routes>
     )

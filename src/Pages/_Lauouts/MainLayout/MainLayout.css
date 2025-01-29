@@ -26,3 +26,12 @@
     gap: 32px;
 }
 
+@media only screen and (max-width: 600px){
+    .action-bar span{
+        display: none;
+    }
+    .main-content-wrapper{
+        padding: 32px 8px 0px 8px;
+    }
+}
+

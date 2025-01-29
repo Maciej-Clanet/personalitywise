@@ -5,7 +5,57 @@
 
     display: flex;
     flex-direction: column;
+    gap: 4px;
     padding: 32px 16px;
 
     border-right: 1px solid rgba(4,45,73,0.3);
+
+    min-width: 150px;
+}
+
+.side-nav-btn{
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-size: var(--txt-0); 
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease-in-out;
+}
+.side-nav-btn:hover{
+    background-color: var(--blue-primary);
+}
+.side-nav-btn.active{
+    background-color: var(--blue-primary-highlight);
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 600px){
+    .side-nav{
+        min-width: 100px;
+        padding: 32px 8px;
+    }
+    .side-nav-btn img{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .side-nav{
+        min-width: auto;
+    }
+    .side-nav-btn{
+        justify-content: center;
+    }
+    .side-nav-btn img{
+        display: block;
+    }
+    .side-nav-btn span{
+        display: none;
+    }
 }
