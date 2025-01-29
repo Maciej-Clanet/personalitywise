@@ -12,9 +12,24 @@
   --blue-primary-highlight: #3C8EC3;
   --bg-col: #F1F4F6;
   --bg-lightest: #fff;
+  --bg-transparent: rgba(255,255,255,0.5);
 
   --error-col: rgb(199, 12, 5);
   --success-col: rgb(5, 182, 5);
+
+  color: var(--blue-dark);
+}
+.dark-theme{
+  --blue-dark: #4e8cff;
+  --blue-primary: #233acf;
+  --blue-primary-highlight: #2e4bda;
+  --bg-col: #112633;
+  --bg-lightest: #1c102f;
+  --bg-transparent: rgba(0,0,0,0.5);
+
+  --error-col: rgb(199, 12, 5);
+  --success-col: rgb(5, 182, 5);
+  color: var(--blue-dark);
 }
 
 /* setting up typography scaling based on 1.25 ratio with a base of 1rem (16px) */

@@ -20,6 +20,7 @@ export default function PageRouting(){
 
             {/* protected routes, redirect to auth if not logged in */}
             <Route element={<MainLayout/>}>
+                {/*because these routes are nested, the elements will be placed inside the "Outlet" component of the MainLayout component */}
                 <Route path="home" element={user ? <HomePage/> : <Navigate to="/" />}/>
                 <Route path="settings" element={user ?  <SettingsPage/> : <Navigate to="/" />}/>
                 <Route path="billing" element={user ? <BillingPage/> : <Navigate to="/" />}/>

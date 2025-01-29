@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// Browser router is needed when using react-router as a library instead of as a framework
 import { BrowserRouter } from 'react-router';
+
+// User provider will allow passing user data and functions to manage user data to nested components, prevents prop drilling.
 import { UserProvider } from './Contexts/UserContext';
+import { SettingsProvider } from './Contexts/SettingsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <SettingsProvider>
+          <App />
+        </SettingsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,6 +1,6 @@
 .side-nav{
     min-height: 100vh;
-    background-color: rgba(255,255,255,0.5);
+    background-color: var(--bg-transparent);
     backdrop-filter: blur(32px);
 
     display: flex;
@@ -25,7 +25,12 @@
     padding: 4px 8px;
     border-radius: 4px;
 
+    background-color: var(--bg-transparent);
+
     transition: background-color 0.3s ease-in-out;
+}
+.dark-theme .side-nav-btn img{
+    filter: invert(49%) sepia(98%) saturate(2171%) hue-rotate(201deg) brightness(100%) contrast(101%);
 }
 .side-nav-btn:hover{
     background-color: var(--blue-primary);
@@ -33,6 +38,22 @@
 .side-nav-btn.active{
     background-color: var(--blue-primary-highlight);
     font-weight: 800;
+}
+
+.theme-button{
+    margin-top: auto;
+    background: none;
+    border: none;
+
+    background-color: var(--blue-dark);
+    color: var(--bg-lightest);
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover{
+        filter: brightness(1.2);
+    }
 }
 
 @media only screen and (max-width: 600px){
