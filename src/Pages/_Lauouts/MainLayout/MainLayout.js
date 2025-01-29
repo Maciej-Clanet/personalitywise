@@ -9,7 +9,7 @@ function ActionBar(){
     const {user, logout} = useUser();
 
     if(!user){
-        return;
+    return;
     }
     return(
         <div className="action-bar">
@@ -22,10 +22,10 @@ function ActionBar(){
 export default function MainLayout(){
 
     return(
-        <div class="main-layout">
+        <div className="main-layout">
             <SideNav/>
-            <div class="main-content-wrapper">
-                <div class="main-content subtle-scrollbar">
+            <div className="main-content-wrapper">
+                <div className="main-content subtle-scrollbar">
                     <ActionBar/>
                     <Outlet/>
                 </div>

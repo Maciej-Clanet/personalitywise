@@ -101,6 +101,12 @@ export default function AuthPage(){
             return;
         }
 
+        if(fakeUserDb[username]){
+            setError("User with this email already exists");
+            setIsLoading(false);
+            return;
+        }
+
 
 
         setTimeout(() => {
